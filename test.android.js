@@ -4,15 +4,17 @@ const { join } = require('path');
 (async () => {
     const browser = await remote({
         logLevel: 'trace',
-        //protocol: 'https',
-        //hostname: 'us1-manual.app.testobject.com',
-        //port: '',
+        protocol: 'https',
+        hostname: 'appium.testobject.com',
+        port: 443,
+        //user: 'german_giunta2',
+        //key: 'da35367c-ca93-482e-8395-c4096b807d14',
         capabilities: {
-            //testobject_api_key: 'A873222677F54380961A480809352558',
+            testobject_api_key: 'A873222677F54380961A480809352558',
             platformName: 'Android',
-            platformVersion: '7.1.1',
-            deviceName: 'Nexus 5X API 29 x86',
-            app: join(process.cwd(), './apps/com.eroad.timely-Signed.apk')
+            //platformVersion: '9',
+            //deviceName: 'Nexus 5X API 29 x86',
+            //app: join(process.cwd(), './apps/com.eroad.timely-Signed.apk')
         }
     })
 
@@ -22,7 +24,7 @@ const { join } = require('path');
     const pwdInput = await browser.$('~passwordInput')
     await pwdInput.setValue('1111')
 
-    await browser.debug()
+    //await browser.debug()
 
     await browser.deleteSession()
 })().catch((e) => console.error(e))
