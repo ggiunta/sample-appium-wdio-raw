@@ -1,13 +1,8 @@
+const { config } = require('./wdio.shared.conf');
 const { join } = require('path');
 
-exports.config = {
-    logLevel: 'trace',
-    specs: [
-        './tests/**/*.js'
-    ],
-
-    capabilities: [{
-        testobject_api_key: '5AEEB8BF45C04B30AFEB9D6F4C980162',
+config.capabilities = [
+    {
         platformName: 'iOS',
         deviceName: 'iPhone 8',
         platformVersion: '12.4.1',
@@ -16,6 +11,7 @@ exports.config = {
         xcodeOrgId: 'UY7WNAZ734',
         xcodeSigningId: 'iPhone Developer',
         automationName: 'XCUITest',
-        noReset: false
-    }]
-}
+    },
+];
+
+exports.config = config;

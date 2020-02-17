@@ -1,11 +1,9 @@
-exports.config = {
-    logLevel: 'trace',
-    hostname: 'hub-cloud.browserstack.com',
-    specs: [
-        './tests/**/*.js'
-    ],
+const { config } = require('./wdio.shared.conf');
 
-    capabilities: [{
+config.hostname = 'hub-cloud.browserstack.com',
+
+config.capabilities = [
+    {
         app: 'bs://9c90aa8a6bf1f0590bee96477d44390f7612ed27',
         device : 'iPhone 8 Plus',
         os_version : '11',
@@ -14,5 +12,7 @@ exports.config = {
         project: 'My First Project',
         build : 'My First Build',
         name: 'Bstack-[Node] Sample Test',
-    }]
-}
+    },
+];
+
+exports.config = config;
