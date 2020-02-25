@@ -6,6 +6,7 @@ describe('EROAD Timely Login', function() {
         var logbookPage = new (require('../pageobjects/logbook.page'))(browser);
 
         var helpers = new (require('../support/helpers'))(browser);
+        var data = require('../data/data.json');
 
         if (browser.isIOS) {
             helpers.wairForAlertDisplayed()
@@ -14,7 +15,7 @@ describe('EROAD Timely Login', function() {
             browser.dismissAlert()
         }
 
-        loginPage.submitCredentials('ggiunta', '1111');
+        loginPage.submitCredentials(data.validUser.user, data.validUser.password);
 
         if (browser.isAndroid) {
             helpers.wairForAlertDisplayed()
