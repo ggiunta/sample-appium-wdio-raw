@@ -4,4 +4,7 @@ exports.config = {
     specs: [
         './tests/**/*.js'
     ],
+    mochaOpts: {
+        timeout: 0
+    }
 };

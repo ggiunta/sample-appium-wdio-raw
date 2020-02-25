@@ -1,7 +1,5 @@
 describe('EROAD Timely Login', function() {
     it('Valid', function() {
-        this.timeout(0);
-
         var loginPage = new (require('../pageobjects/login.page'))(browser);
         var logbookPage = new (require('../pageobjects/logbook.page'))(browser);
 
