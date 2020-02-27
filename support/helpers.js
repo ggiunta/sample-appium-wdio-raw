@@ -5,7 +5,7 @@ var Helpers = function(browser) {
         browser.waitUntil( function() {
             return browser.getAlertText()
         }, 30000)
-    };
+    }
 
     this.getIOSNameSelector = function (name) {
         return (`-ios predicate string:name CONTAINS '${name}'`)

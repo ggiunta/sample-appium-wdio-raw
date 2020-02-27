@@ -1,10 +1,10 @@
 var LogbookPage = function(browser) {
     this.browser = browser;
 
-    const moreButtonSelector = '~moreButton';
+    const moreButtonSelector = '~moreButton'
 
     this.waitUntilDisplayed = function () {
-        browser.$(moreButtonSelector).waitForDisplayed();
+        browser.$(moreButtonSelector).waitForDisplayed()
     };
 };
 

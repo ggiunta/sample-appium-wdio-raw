@@ -3,9 +3,10 @@ var LoginPage = function(browser) {
 
     const userInputSelector = '~userNameInput'
     const pwdInputSelector = '~passwordInput'
+    const loginButtonSelector = 'LOGIN'
 
     this.submitCredentials = function (user, password) {
-        var helpers = new (require('../support/helpers'))(browser);
+        var helpers = new (require('../support/helpers'))(browser)
 
         browser.$(userInputSelector).waitForDisplayed()
         browser.$(userInputSelector).setValue(user)
@@ -15,15 +16,12 @@ var LoginPage = function(browser) {
 
         if (browser.isIOS) {
             browser.hideKeyboard()
-            browser.$('XCUIElementTypeTable').click()
-        } else {
-            browser.$(helpers.getAndroidTextSelector('Test')).click()
         }
         
         if (browser.isIOS) {
-            browser.$(helpers.getIOSNameSelector('LOGIN')).click()
+            browser.$(helpers.getIOSNameSelector(loginButtonSelector)).click()
         } else {
-            browser.$(helpers.getAndroidTextSelector('LOGIN')).click()
+            browser.$(helpers.getAndroidTextSelector(loginButtonSelector)).click()
         }
     };
 };
