@@ -7,15 +7,15 @@ describe('EROAD Timely Login', function() {
         var data = require('../data/data.json')
 
         if (browser.isIOS) {
-            helpers.wairForAlertDisplayed()
+            helpers.waitForAlertDisplayed()
             browser.dismissAlert()
-            helpers.wairForAlertDisplayed()
+            helpers.waitForAlertDisplayed()
             browser.dismissAlert()
         }
 
         loginPage.submitCredentials(data.validUser.user, data.validUser.password)
 
-        helpers.wairForAlertDisplayed()
+        helpers.waitForAlertDisplayed()
         browser.dismissAlert()
 
         logbookPage.waitUntilDisplayed()
